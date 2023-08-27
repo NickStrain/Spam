@@ -14,7 +14,7 @@ install:
 # 	pip install --upgrade pip &&\
 # 		pip install -r amazon-linux.txt
 lint:
-	pylint ,C main.py
+	python main.py
 
 format:
 	black *.py
