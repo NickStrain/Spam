@@ -1,0 +1,11 @@
+numpy
+pandas 
+
+#framework 
+scikit-learn
+
+#text preprocessing 
+nltk
+
+#deployment 
+Flask
