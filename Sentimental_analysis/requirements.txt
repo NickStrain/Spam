@@ -1,0 +1,11 @@
+transformers
+numpy
+pandas 
+torch --index-url https://download.pytorch.org/whl/cu118
+scikit-learn
+torchtext
+tensorflow
+Pillow
+tensorflow_datasets
+tensorflow_probability
+tqdm
