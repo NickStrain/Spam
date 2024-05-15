@@ -1,0 +1,59 @@
+@import url("../CSS/homeCSS.css");
+
+form{
+    height:800px;
+}
+legend{
+    text-transform: uppercase;
+    font-weight:bolder;
+    font-size: 30px;
+    text-align: end;
+    
+}
+input{
+    height:30px;
+    border-radius:20px;
+    padding:25px;
+    font-size:25px;
+    font-weight:bolder;
+    margin:10px;
+    width:70%;
+}
+input:focus{
+    border:2px solid blue;
+}
+button{
+    height:50px;
+    padding:10px;
+    border-radius:20px;
+    border-style:outset;
+    margin:5px 30px;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+input[type="checkbox"]{
+    height:20px;
+    width:20px;
+}
+
+input[type="checkbox"]:checked{
+    width:20px;
+    transition: width 0.5s;
+}
+
+input[type="email"]:invalid{
+    border:2px solid red;
+}
+input[type="number"]:invalid{
+    border:2px solid red;
+}
+#result{
+    width:100%;
+    color:red;
+    text-decoration: underline;
+}
+span{
+    display: inline-block;
+    margin-top:10px;
+}

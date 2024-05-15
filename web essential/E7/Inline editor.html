@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="inlineEditorApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Bootstrap & AngularJS Inline Editor</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .title-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .title {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div ng-controller="InlineEditorController as ctrl" class="container center">
+    <div class="title-container">
+      <h1 class="title" ng-hide="ctrl.editingTitle">{{ ctrl.title }}</h1>
+      <div ng-show="ctrl.editingTitle">
+        <input type="text" class="form-control" ng-model="ctrl.title" id="title">
+        <button class="btn btn-outline-secondary ml-2" type="button" ng-click="ctrl.saveField('title')"><i class="fas fa-check"></i></button>
+      </div>
+    </div>
+    <button class="btn btn-outline-secondary mt-3" type="button" ng-click="ctrl.editField('title')"><i class="fas fa-pencil-alt"></i> Edit Title</button>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    angular.module('inlineEditorApp', [])
+    .controller('InlineEditorController', function() {
+      var ctrl = this;
+
+      // Initial title value
+      ctrl.title = "Click to edit me";
+
+      // Flag to control editing mode
+      ctrl.editingTitle = false;
+
+      // Function to start editing the field
+      ctrl.editField = function(field) {
+        ctrl.editingTitle = true;
+        // Set a timeout to focus the input after it's shown
+        setTimeout(function() {
+          document.getElementById(field).focus();
+        });
+      };
+
+      // Function to save the field and exit editing mode
+      ctrl.saveField = function(field) {
+        ctrl.editingTitle = false;
+      };
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="instantSearchApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Instant Search - Engineering Departments</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div ng-controller="SearchController as searchCtrl" class="container mt-5">
+    <h1>Instant Search - Engineering Departments</h1>
+    <input type="text" class="form-control mt-3" placeholder="Search..." ng-model="searchCtrl.query">
+    <ul class="list-group mt-3">
+      <li class="list-group-item" ng-repeat="department in searchCtrl.departments | filter:searchCtrl.query">{{ department }}</li>
+    </ul>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script>
+    angular.module('instantSearchApp', [])
+    .controller('SearchController', function() {
+      var searchCtrl = this;
+
+      // Sample list of engineering departments
+      searchCtrl.departments = [
+        'Computer Science and Engineering', 
+        'Computer Science and Design', 
+        'Electrical and Electronics Engineering', 
+        'Mechanical Engineering', 
+        'Civil Engineering', 
+        'Electronics and Communication Engineering', 
+        'Chemical Engineering', 
+        'Biomedical Engineering', 
+        'Aerospace Engineering', 
+        'Environmental Engineering', 
+        'Materials Science and Engineering'
+      ];
+    });
+  </script>
+</body>
+</html>

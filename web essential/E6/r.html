@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Single Page Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #navbar {
+            background-color: #333;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            position: fixed;
+            top: 0;
+        }
+
+        #navbar a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        #navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        #navbar a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+            margin-top: 60px; /* Adjusted margin to make space for navbar */
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
+</head>
+<body>
+    <div id="navbar">
+        <a href="#/" class="active">Home</a>
+        <a href="#/courses">Courses</a>
+        <a href="#/contactus">Contact Us</a>
+    </div>
+    <div ng-view class="content"></div>
+
+    <script type="text/ng-template" id="pages/home.html">
+        <h1>Home</h1>
+        <img src="P:\Saved Pictures\clg img.jpg" alt="Default Image">
+        <h3>{{message}}</h3>
+    </script>
+    <script type="text/ng-template" id="pages/courses.html">
+        <h1>Courses</h1>
+        <h3>{{message}}</h3>
+    </script>
+    <script type="text/ng-template" id="pages/contactus.html">
+        <h1>Contact Us</h1>
+        <h3>{{message}}</h3>
+    </script>
+
+    <script>
+        var app = angular.module('myApp', ['ngRoute']);
+        app.config(function($routeProvider) {
+            $routeProvider
+                .when('/', {
+                    templateUrl : 'pages/home.html',
+                    controller : 'HomeController'
+                })
+                .when('/courses', {
+                    templateUrl : 'pages/courses.html',
+                    controller : 'CoursesController'
+                })
+                .when('/contactus', {
+                    templateUrl : 'pages/contactus.html',
+                    controller : 'ContactUsController'
+                })
+                .otherwise({redirectTo: '/'});
+        });
+        app.controller('HomeController', function($scope) {
+            $scope.message = 'Welcome to REC';
+        });
+        app.controller('CoursesController', function($scope) {
+            $scope.message = 'AERO, AUTO, BIOMED, BIOTECH, CHEMICAL, CIVIL, CSE,CSD, CSBS,ECE, EEE, FT, IT, MCT, MECH';
+        });
+        app.controller('ContactUsController', function($scope) {
+            $scope.message = 'Rajalakshmi Nagar, Thandalam, Chennai - 602 105';
+        });
+    </script>
+</body>
+</html>

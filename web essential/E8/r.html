@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">My Portfolio</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#portfolio">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- About Section -->
+  <section id="about" class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <h2>About Me</h2>
+          <p>Hi there! I'm Naren, currently a student at Rajalakshmi Engineering College, pursuing Computer Science and Design. I'm passionate about exploring the intersection of technology and design to create innovative solutions. My journey in the field of computer science has equipped me with a strong foundation in programming, problem-solving, and software development. Additionally, my interest in design allows me to approach challenges with a creative mindset, striving to craft user-centric experiences.</p>
+        </div>
+        <div class="col-lg-6">
+          <img src="P:\Saved Pictures\Men.webp" alt="Profile Picture" class="img-fluid rounded-circle">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <!-- Portfolio Section -->
+<section id="portfolio" class="bg-light py-5">
+  <div class="container">
+    <h2>Portfolio</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <img src="P:\Saved Pictures\images.png" alt="Project 1" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">E-commerce Website</h5>
+            <p class="card-text">Developed a fully functional e-commerce website using HTML, CSS, and JavaScript, integrated with payment gateway and user authentication.</p>
+            <a href="#" class="btn btn-primary">View Project</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="P:\Saved Pictures\port.webp" alt="Project 2" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Portfolio Website</h5>
+            <p class="card-text">Designed and built a responsive portfolio website to showcase personal projects, skills, and experiences using Bootstrap and custom CSS.</p>
+            <a href="#" class="btn btn-primary">View Project</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="P:\Saved Pictures\blog.jpg" alt="Project 3" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Blog Website</h5>
+            <p class="card-text">Created a dynamic blog website using WordPress, customized themes, and plugins to enhance functionality and user experience.</p>
+            <a href="#" class="btn btn-primary">View Project</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <form>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" class="form-control" id="email">
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea class="form-control" id="message" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <div class="card bg-primary text-white">
+            <div class="card-body">
+              <h5 class="card-title">Get In Touch</h5>
+              <p class="card-text">Feel free to contact me if you have any questions or inquiries!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

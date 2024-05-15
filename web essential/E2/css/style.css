@@ -1,0 +1,72 @@
+/* External CSS */
+nav {
+    background-color: violet;
+    padding: 10px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #8a2be2; /* Voilet color */
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: #6a208e; /* Darker shade of violet on hover */
+}
+
+/* Embedded CSS */
+main {
+    padding: 20px;
+}
+
+section {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+p {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+p strong {
+    font-weight: bold;
+}
+
+p em {
+    font-style: italic;
+}
+
+p::first-letter {
+    font-size: 150%; /* Increase the font size of the first letter */
+    margin-right: 5px; /* Add some space after the first letter */
+    font-weight: bold;
+}
+
+p::first-line {
+    text-transform: uppercase; /* Convert the first line to uppercase */
+}
+

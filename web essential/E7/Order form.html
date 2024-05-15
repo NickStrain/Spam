@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="orderFormApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Order Form</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body, html {
+      height: 100%;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    .order-form {
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-label {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div ng-controller="OrderFormController as formCtrl" class="container">
+    <form class="order-form">
+      <div class="form-group">
+        <label for="product" class="form-label">Product:</label>
+        <input type="text" class="form-control" id="product" ng-model="formCtrl.product">
+      </div>
+      <div class="form-group">
+        <label for="quantity" class="form-label">Quantity:</label>
+        <input type="number" class="form-control" id="quantity" ng-model="formCtrl.quantity">
+      </div>
+      <div class="form-group">
+        <label for="price" class="form-label">Price:</label>
+        <input type="number" class="form-control" id="price" ng-model="formCtrl.price">
+      </div>
+      <button type="button" class="btn btn-primary" ng-click="formCtrl.submitOrder()">Submit Order</button>
+    </form>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script>
+    angular.module('orderFormApp', [])
+    .controller('OrderFormController', function() {
+      var formCtrl = this;
+
+      // Initialize form fields
+      formCtrl.product = "";
+      formCtrl.quantity = "";
+      formCtrl.price = "";
+
+      // Function to submit the order
+      formCtrl.submitOrder = function() {
+        // Process the order here (e.g., send to server, store in database)
+        console.log("Order submitted:");
+        console.log("Product: " + formCtrl.product);
+        console.log("Quantity: " + formCtrl.quantity);
+        console.log("Price: $" + formCtrl.price);
+        // Clear form fields after submission
+        formCtrl.product = "";
+        formCtrl.quantity = "";
+        formCtrl.price = "";
+      };
+    });
+  </script>
+</body>
+</html>

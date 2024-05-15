@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="switchableViewApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Switchable Grid</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div ng-controller="SwitchableGridController as gridCtrl" class="container mt-5">
+    <h1>Switchable Grid</h1>
+    <div class="btn-group mb-3">
+      <button class="btn btn-primary" ng-click="gridCtrl.switchView('grid')">Grid View</button>
+      <button class="btn btn-primary" ng-click="gridCtrl.switchView('list')">List View</button>
+    </div>
+    <div ng-show="gridCtrl.currentView === 'grid'">
+      <div class="row">
+        <div class="col-md-4 mb-3" ng-repeat="item in gridCtrl.items">
+          <div class="card">
+            <div class="card-body">
+              {{ item }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div ng-show="gridCtrl.currentView === 'list'">
+      <ul class="list-group">
+        <li class="list-group-item" ng-repeat="item in gridCtrl.items">{{ item }}</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script>
+    angular.module('switchableViewApp', [])
+    .controller('SwitchableGridController', function() {
+      var gridCtrl = this;
+
+      // Sample list of items
+      gridCtrl.items = [
+        'Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'
+      ];
+
+      // Initialize current view
+      gridCtrl.currentView = 'grid';
+
+      // Function to switch between grid and list views
+      gridCtrl.switchView = function(view) {
+        gridCtrl.currentView = view;
+      };
+    });
+  </script>
+</body>
+</html>
